@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require_relative 'player'
+require './lib/game'
+require './lib/player'
 
 class Battle < Sinatra::Base
   enable :sessions
