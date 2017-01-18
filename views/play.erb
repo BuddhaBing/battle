@@ -1,8 +1,21 @@
+<style>
+  .vs, .hp, .players, h1  {
+    width:100%;
+    text-align:center;
+    margin:auto;
+  }
+</style>
+<h1>Battle!</h1>
 <div>
-  <div>
-    Battle: <%= @player1_name %>: <%= @player1_health %>HP vs. <%= @player2_name %>: <%= @player2_health %>HP
+  <div class="vs">
+    <div class="players">
+      <%= @player1_name %> vs. <%= @player2_name %>
+    </div>
+    <div class="hp">
+      <%= @player1_health %>HP vs. <%= @player2_health %>HP
+    </div>
   </div>
-  <div>
+  <div class="vs">
     <form action="/attack">
       <input type="submit" value="Attack"/>
     </form>

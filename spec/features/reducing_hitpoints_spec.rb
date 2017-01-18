@@ -3,6 +3,6 @@ feature "Reducing HP" do
     sign_in_and_play
     click_button "Attack"
     click_button "OK"
-    expect(page).to have_content "name2: 90HP"
+    expect(page).to have_content "100HP vs. 90HP"
   end
 end
