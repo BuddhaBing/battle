@@ -6,7 +6,7 @@ class Game
     @player_2 = player_2
   end
 
-  def attack(defender, damage = 2)
+  def attack(defender, damage = 10)
     defender.takes_damage(damage)
   end
 end

@@ -7,7 +7,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib/app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require 'rspec-sinatra'
+# require 'rspec-sinatra'
 require 'features/web_helpers'
 require 'capybara/poltergeist'
 

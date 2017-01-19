@@ -4,6 +4,9 @@ describe Game do
   let(:player_2) {double :player_2}
   subject{described_class.new player_1, player_2}
   describe "#creation" do
+    it 'initializes with two arguments (players)' do
+      expect(Game).to respond_to(:new).with(2).arguments
+    end
     it "should have player one" do
       expect(subject.player_1).to eq player_1
     end
