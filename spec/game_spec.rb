@@ -1,17 +1,17 @@
 require "game"
 describe Game do
-  let(:player_1) {double :player_1}
-  let(:player_2) {double :player_2}
+  let(:player_1) {double :player_1, :name => "Mario", :health => 100 }
+  let(:player_2) {double :player_2, :name => "Bowser", :health => 100 }
   subject{described_class.new player_1, player_2}
   describe "#creation" do
     it 'initializes with two arguments (players)' do
       expect(Game).to respond_to(:new).with(2).arguments
     end
     it "should have player one" do
-      expect(subject.player_1).to eq player_1
+      expect(subject.player_1[:player]).to eq player_1
     end
     it "should have player two" do
-      expect(subject.player_2).to eq player_2
+      expect(subject.player_2[:player]).to eq player_2
     end
   end
   describe "#attack" do
@@ -22,13 +22,14 @@ describe Game do
     end
   end
   describe '#current_turn' do
-    it 'starts as player 1' do
-      expect(subject.current_turn).to eq player_1
+    it 'starts as player 2' do
+      expect(subject.current_turn[:name]).to eq player_2.name
     end
   end
   describe '#switch_turn' do
     it 'switches to the other player' do
-      expect(subject.current_turn).to eq player_2
+      subject.current_turn
+      expect(subject.current_turn[:name]).to eq player_1.name
     end
   end
 end

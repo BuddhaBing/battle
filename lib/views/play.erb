@@ -1,10 +1,11 @@
 <div style="margin:auto; width:100%; text-align:center">
-  <%= @game.player_1.name  + " vs. " + @game.player_2.name%>
+  <%= @game.player_1[:name]  + " vs. " + @game.player_2[:name]%>
   <div style="margin:auto; display:inline-block; width:100%; text-align:center">
-      <%= @game.player_1.name %>: <%= @game.player_1.health %>HP
-      <%= @game.player_2.name %>: <%= @game.player_2.health %>HP
+      <%= @game.player_1[:name] %>: <%= @game.player_1[:health]%>HP
+      <%= @game.player_2[:name] %>: <%= @game.player_2[:health] %>HP
   </div>
   <div style="margin:auto; display:inline-block; width:100%; text-align:center">
+    <%= @game.game_over %>
     <form action="/attack">
       <input type="submit" value="attack"/>
     </form>

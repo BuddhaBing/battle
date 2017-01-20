@@ -5,7 +5,6 @@ describe 'Battle - ' do
         sign_in_and_play
         expect(page).to have_content "Link's turn"
       end
-    end
       scenario 'after Player 1 has attacked' do
         sign_in_and_play
         attack_and_return
