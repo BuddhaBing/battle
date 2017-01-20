@@ -1,6 +1,6 @@
 class Game
 
-	attr_reader :current_player, :players, :game_over, :sleep
+	attr_reader :current_player, :players, :game_over, :sleep, :turn
 
 	ATTACKS = %w(Attack Poisons Paralyzes Snooze)
 
@@ -17,6 +17,7 @@ class Game
 		@current_player = 0
 		@game_over = false
 		@sleep = 0
+		@turn = @players[@current_player].name
 	end
 
 	def player1
@@ -34,20 +35,24 @@ class Game
 	end
 
 	def snooze(player)
-		switch_turns
+		@players[@current_player].affliction[:sleep] = true
+		#switch_turns
 		@sleep = sleep_amount
-		@players[@current_player].sleep = true
+		# @players[@current_player].sleep = true
 		confirm("snooze")
 	end
 
 	def sleep
-		@players[@current_player].sleep
+		@players[@current_player].affliction[:sleep]
+		# @players[@current_player].sleep
 	end
 
 	def switch_turns
 		if @sleep > 0
+			@turn = @players[@current_player-1].name
 			@sleep -= 1
 		else
+			@turn = @players[@current_player-1].name
 			@current_player = current_player == 0 ? 1 : 0
 		end
 	end
