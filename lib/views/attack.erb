@@ -1,4 +1,4 @@
-<%= @game.current_turn[:name] %>'s attack was successful on <%= @game.current_turn == @game.player_1 ? @game.player_1[:name] : @game.player_2[:name]%>
+<%= @game.switch_turn[:name] %>'s attack was successful on <%= @game.switch_turn == @game.player_1 ? @game.player_1[:name] : @game.player_2[:name]%>
 <form action="/play">
   <input type="submit" value="OK"/>
 </form>

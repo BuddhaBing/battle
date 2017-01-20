@@ -23,13 +23,13 @@ describe Game do
   end
   describe '#current_turn' do
     it 'starts as player 2' do
-      expect(subject.current_turn[:name]).to eq player_2.name
+      expect(subject.switch_turn[:name]).to eq player_2.name
     end
   end
   describe '#switch_turn' do
     it 'switches to the other player' do
-      subject.current_turn
-      expect(subject.current_turn[:name]).to eq player_1.name
+      subject.switch_turn
+      expect(subject.switch_turn[:name]).to eq player_1.name
     end
   end
 end

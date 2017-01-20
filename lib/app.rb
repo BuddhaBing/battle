@@ -18,13 +18,13 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
-    @game.current_turn
+    @game.switch_turn
     erb :play
   end
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.current_turn[:player])
+    @game.attack(@game.switch_turn[:player])
     erb :attack
   end
   # start the server if ruby file executed directly

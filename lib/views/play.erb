@@ -5,7 +5,7 @@
       <%= @game.player_2[:name] %>: <%= @game.player_2[:health] %>HP
   </div>
   <div style="margin:auto; display:inline-block; width:100%; text-align:center">
-    <%= @game.game_over %>
+    <%= @game.current_turn %>
     <form action="/attack">
       <input type="submit" value="attack"/>
     </form>

@@ -19,13 +19,19 @@ class Game
     @player_1.has_value?(player) ? @player_1[:health] = player.health : @player_2[:health] = player.health
   end
 
-  def game_over
-    @player_1[:health] == 0 ? "#{@player_1[:name]} Loses!" : @player_2[:health] == 0 ? "#{@player_2[:name]} Loses!" : "#{current_turn[:name]}'s turn"
-  end
+	def current_turn
+		game_over? ? "Game over!" :	"#{switch_turn[:name]}'s turn"
+	end
 
-  def current_turn
+	def switch_turn
     @turn_counter += 1
     @turn_counter % 2 == 0 ? @player_1 : @player_2
+  end
+
+	private
+
+  def game_over?
+    @player_1[:health] == 0 || @player_2[:health] == 0
   end
 
 end
