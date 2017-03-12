@@ -99,8 +99,8 @@ I want a sexy user interface
 
 ## <a name="install">Installation</a>
 ```
-$ git clone https://github.com/treborb/example.git
-$ cd example
+$ git clone https://github.com/treborb/battle.git
+$ cd battle
 $ rvm use 2.3.3 --install --binary --fuzzy
 $ gem install bundler
 $ bundle
