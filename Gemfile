@@ -1,11 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby "2.3.3"
+ruby '2.3.3'
 
-gem 'rspec'
 gem 'sinatra'
-gem 'rspec-sinatra'
+gem 'shotgun'
 gem 'capybara'
-gem 'selenium-webdriver'
-gem "shotgun"
-gem 'codecov', :require => false, :group => :test
+gem 'pry', :require => false
+gem 'pry-byebug', :require => false
+gem 'rspec-sinatra'
+gem 'simplecov', :require => false, :group => :test
+gem 'poltergeist'
