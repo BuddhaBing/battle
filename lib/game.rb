@@ -35,16 +35,14 @@ class Game
 	end
 
 	def snooze(player)
-		@players[@current_player].affliction[:sleep] = true
-		#switch_turns
+		switch_turns
 		@sleep = sleep_amount
-		# @players[@current_player].sleep = true
+		@players[@current_player].sleep = true
 		confirm("snooze")
 	end
 
 	def sleep
-		@players[@current_player].affliction[:sleep]
-		# @players[@current_player].sleep
+		@players[@current_player].sleep
 	end
 
 	def switch_turns

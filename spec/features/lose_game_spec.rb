@@ -3,7 +3,7 @@
 # I want to see a 'Lose' message if I reach 0HP first
 
 feature "Display lose message" do
-  scenario "player 2 looses" do
+  scenario "player 2 loses" do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(100)
     click_button 'Attack'

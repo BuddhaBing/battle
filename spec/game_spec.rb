@@ -4,7 +4,7 @@ describe Game do
 
 	subject(:game)		{described_class.new(player1, player2)}
 	let (:player1) 		{ double :player, name: "Dave", chr: ""}
-	let (:player2)		{ double :player, name: "Mittens", chr: "" }
+	let (:player2)		{ double :player, name: "Mittens", chr: ""}
 
 	describe '#defaults' do
 		it "player 1 to be an player object" do
@@ -27,12 +27,6 @@ describe Game do
 			allow(player2).to receive(:receive_damage)
 			allow(player2).to receive(:points).and_return(100)
 			expect(game.attack(player2,'poison')).to eq "Dave poisons Mittens"
-		end
-	end
-
-	describe '#snooze' do
-		it 'allows player 1 to snooze player 2' do
-			expect(game.snooze(player2)).to eq "Dave snoozes Mittens"
 		end
 	end
 
