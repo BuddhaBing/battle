@@ -15,9 +15,7 @@
 * [User Stories](#user-stories)
 * [Installation](#install)
 * [Usage](#usage)
-* [Implemented Features](#features)
 * [Tests](#tests)
-* [Heroku Demo](#demo)
 * [Screenshots](#screenshots)
 
 ## The Brief
